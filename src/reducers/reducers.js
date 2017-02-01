@@ -4,7 +4,7 @@ const initialState = {
   gelements: {
       blackCircles: [{}],
       circles: [
-          {r: 50}
+          {r: 50, label: 'hello'}
       ],
       nodes: [
           {dot: 'right'}
@@ -21,7 +21,7 @@ export default function todoApp(state = initialState, action) {
                 nodes: state.gelements.nodes,
                 circles: [
                     ...state.gelements.circles,
-                    {r: 50}
+                    {r: 50, label:'new item'}
                 ]
             }
         });
