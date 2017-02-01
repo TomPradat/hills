@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
 
-class CircleForm extends Component {
-  render() {
-    return (
+const CircleForm = ({label, properties, activity}) => (
       <form>
         <div>
           <label htmlFor="label">Label :</label>
-          <input type="text" name="label" id="label" value={this.props.data.label}/>
+          <input type="text" name="label" id="label" value={label}/>
         </div>
         <div>
           <label htmlFor="properties">Properties :</label>
-          <input type="text" name="properties" id="properties" value={this.props.data.properties}/>
+          <input type="text" name="properties" id="properties" value={properties}/>
         </div>
         <div>
           <label htmlFor="activity">Activity :</label>
-          <input type="text" name="activity" id="activity" value={this.props.data.activity}/>
+          <input type="text" name="activity" id="activity" value={activity}/>
         </div>
         <input type="submit"/>
       </form>
-    );
-  }
-}
+  );
 
 export default CircleForm;
