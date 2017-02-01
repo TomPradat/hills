@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Svg.css';
 import BlackCircle from './../BlackCircle/BlackCircle';
 import Circle from './../Circle/Circle';
 import Node from './../Node/Node';
 
-const Svg = () => (
+const Svg = ({gelements}) => (
+
     <svg id="main-svg" width="600px" height="600px">
         <BlackCircle />
-        <Circle />
-        <Node dot="right"/>
+        {gelements.circles.map( (circle, i) => 
+            <Circle key={i} r={circle.r}/>
+        )}
+        {gelements.nodes.map( (node,i) => 
+            <Node key={i} dot={node.dot}/>
+        )}
     </svg>
 );
 

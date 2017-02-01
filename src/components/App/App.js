@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Svg from './../Svg/Svg';
-import Factory from './../Factory/Factory';
+import ElementsList from './../../containers/ElementsList';
+import FactoryContainer from './../../containers/FactoryContainer';
 import FormContainer from './../FormContainer/FormContainer';
 import './App.css';
 
@@ -10,9 +10,9 @@ class App extends Component {
       <div className="App">
         <div id="side-menu">
           <FormContainer />
-          <Factory />
+          <FactoryContainer />
         </div>
-        <Svg />
+        <ElementsList />
       </div>
     );
   }

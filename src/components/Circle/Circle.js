@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Draggable from 'react-draggable';
 import './Circle.css';
 
-const Circle = () => (
+const Circle = ({r}) => (
   <Draggable 
         defaultPosition={{x: 50, y: 50}}
     >
       <g className="circle">
-        <circle cx="0" cy="0" r="50"/>
+        <circle cx="0" cy="0" r={r}/>
       </g>
   </Draggable>
 );

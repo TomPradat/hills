@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Factory.css';
 
-const Factory = () => (
+const Factory = ({onClick}) => (
     <div id="factory-container">
-        <button>Add circle</button>
-        <button>Add black circle</button>
-        <button>Add node</button>
+        <button onClick={onClick.bind(this, {r: 50}, 'circle')}>Add circle</button>
+        <button onClick={onClick.bind(this, {dot: 'right'}, 'node')}>Add node</button>
     </div>
 );
 
