@@ -1,14 +1,24 @@
 import { connect } from 'react-redux';
+import { selectElement } from './../actions/actions';
 import Svg from './../components/Svg/Svg';
 
 const mapStateToProps = (state) => {
   return {
-    gelements: state.gelements
+    gelements: state.svg.gelements
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    selectElement : (type, id) => {
+      dispatch(selectElement(type, id))
+    } 
   }
 }
 
 const ElementsList = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Svg);
 
 export default ElementsList;

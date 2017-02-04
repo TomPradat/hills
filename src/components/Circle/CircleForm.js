@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 
-const CircleForm = ({label, properties, activity}) => (
-      <form>
+let CircleForm = ({handleSubmit}) => (
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="label">Label :</label>
-          <input type="text" name="label" id="label" value={label}/>
+          <Field name="label" component="input" type="text"/>
         </div>
         <div>
           <label htmlFor="properties">Properties :</label>
-          <input type="text" name="properties" id="properties" value={properties}/>
+          <Field name="properties" component="input" type="text"/>
         </div>
         <div>
           <label htmlFor="activity">Activity :</label>
-          <input type="text" name="activity" id="activity" value={activity}/>
+          <Field name="activity" component="input" type="text"/>
         </div>
-        <input type="submit"/>
+        <button type="submit">Enregistrer</button>
       </form>
   );
+
+CircleForm = reduxForm({
+  form: 'circle',
+})(CircleForm);
 
 export default CircleForm;

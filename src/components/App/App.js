@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ElementsList from './../../containers/ElementsList';
 import FactoryContainer from './../../containers/FactoryContainer';
-import FormContainer from './../FormContainer/FormContainer';
+import FormContainer from './../../containers/FormContainer';
 import './App.css';
 
 class App extends Component {

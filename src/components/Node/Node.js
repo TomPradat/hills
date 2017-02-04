@@ -35,6 +35,7 @@ class Node extends Component {
     return (
     <Draggable 
         defaultPosition={{x: 50, y: 40}}
+        onStart={this.props.selectElement}
     >
     <g className="diamond">
         <polygon points="0 -40,50 0,0 40,-50 0"/>

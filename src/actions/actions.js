@@ -1,24 +1,28 @@
-export const ADD_CIRCLE = 'ADD_CIRCLE';
-export const ADD_NODE = 'ADD_NODE';
-export const SELECT_CIRCLE = 'SELECT_CIRCLE';
+export const ADD_ELEMENT = 'ADD_ELEMENT';
+export const SELECT_ELEMENT = 'SELECT_ELEMENT';
+export const UPDATE_ELEMENT = 'UPDATE_ELEMENT';
 
-const addCircle = (circle) => ({type: ADD_CIRCLE, circle});
-
-const addNode = (node) => ({type: ADD_NODE, node});
-
-export function addElement(element, ElementType) {
-    switch(ElementType) {
-        case 'circle':
-        return addCircle(element);
-
-        default :
-        return addNode(element);
+export function addElement(type, element) {
+    return {
+        type: ADD_ELEMENT,
+        elementType: type,
+        element
     }
 }
 
-export function selectCircle(id) {
+export function selectElement(type, id) {
     return {
-        type: SELECT_CIRCLE,
+        type: SELECT_ELEMENT,
+        elementType: type,
         id
+    }
+}
+
+export function updateElement(type, id, values) {
+    return {
+        type: UPDATE_ELEMENT,
+        elementType: type,
+        id,
+        values
     }
 }

@@ -1,54 +1,64 @@
-import {ADD_CIRCLE, ADD_NODE, ADD_BLACK_CIRCLE} from './../actions/actions';
+import {ADD_ELEMENT, SELECT_ELEMENT, UPDATE_ELEMENT} from './../actions/actions';
 
 const initialState = {
   gelements: {
-      blackCircles: [{}],
-      circles: [
-          {r: 50, label: 'hello'}
+      circle: [
+          {id: 1, r: 50, label: 'hello', properties: '', activity: ''}
       ],
-      nodes: [
-          {dot: 'right'}
+      node: [
+          {id: 1, dot: 'right'}
       ],
-  }
+  },
+  selectedElement: false
+}
+
+const addElement = (state, action) => {
+    const type = action.elementType;
+    const newId = state.gelements[type].length + 1;
+    const newElement = Object.assign({}, action.element, {id: newId});
+    let temp = {};
+    temp[type] = state.gelements[type].concat(newElement);
+
+    return Object.assign({}, state, {
+        gelements: Object.assign({}, state.gelements, temp)
+    }
+    );
+}
+
+const updateElement = (state, action) => {
+    const temp = {};
+    const type = action.elementType;
+    const values = action.values;
+
+    temp[type] = state.gelements[type].map( function (element) {
+        if (action.id === element.id) {
+            return Object.assign({}, element, values);
+        } else {
+            return element;
+        }
+    });
+
+    return Object.assign({}, state, {
+        gelements: Object.assign({}, state.gelements, temp)
+    });
 }
 
 export default function todoApp(state = initialState, action) {
+
     switch(action.type){
-        case ADD_CIRCLE : 
+        case ADD_ELEMENT :
+        return addElement(state, action);
+
+        case SELECT_ELEMENT :
         return Object.assign({}, state, {
-            gelements: {
-                blackCircles: state.gelements.blackCircles,
-                nodes: state.gelements.nodes,
-                circles: [
-                    ...state.gelements.circles,
-                    {r: 50, label:'new item'}
-                ]
+            selectedElement: {
+                type: action.elementType,
+                id: action.id
             }
         });
 
-        case ADD_BLACK_CIRCLE :
-        return Object.assign({}, state, {
-            gelements: {
-                circles: state.gelements.circles,
-                nodes: state.gelements.nodes,
-                blackCircles: [
-                    ...state.gelements.blackCircles,
-                    {}
-                ]
-            }
-        });
-
-        case ADD_NODE :
-        return Object.assign({}, state, {
-            gelements: {
-                blackCircles: state.gelements.blackCircles,
-                nodes: [
-                    ...state.gelements.nodes,
-                    {dot: 'right'}
-                ],
-                circles: state.gelements.circles,
-            }
-        });
+        case UPDATE_ELEMENT :
+        return updateElement(state, action);
 
         default :
         return state;

@@ -4,8 +4,8 @@ import Factory from './../components/Factory/Factory';
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onClick: (element, type) => {
-      dispatch(addElement(element, type))
+    onClick: (type, element) => {
+      dispatch(addElement(type, element))
     }
   }
 }
