@@ -10,6 +10,7 @@ const findElementInState = (state) => {
     const {type, id} = state.selectedElement;
     return {
       type,
+      id,
       values: state.gelements[type].filter( (element ) => element.id === id )[0]
     }
 }
@@ -22,8 +23,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return{
-      handleSubmit: (values) => {
-        dispatch(updateElement('circle', 1, values))
+      handleSubmit: (type, id, values) => {
+        console.log(type, id, values)
+        dispatch(updateElement(type, id, values))
       }
     }
 }
