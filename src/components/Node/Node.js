@@ -31,13 +31,14 @@ class Node extends Component {
   }
   render() {
     const dot = this.calculateDotPosition(this.props.dot);
+    const isSelected = this.props.isSelected;
 
     return (
     <Draggable 
         defaultPosition={{x: 50, y: 40}}
         onStart={this.props.selectElement}
     >
-    <g className="diamond">
+    <g className={isSelected ? "selected diamond" : "diamond"}>
         <polygon points="0 -40,50 0,0 40,-50 0"/>
         <circle cx={dot.x} cy={dot.y} r="4" />
     </g>

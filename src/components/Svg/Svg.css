@@ -3,3 +3,7 @@
     background-color: #f3f3f3;
     display: inline-block;
 }
+.selected > *:first-child{
+    stroke: red;
+    stroke-width: 2px;
+}

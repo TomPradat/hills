@@ -4,7 +4,8 @@ import Svg from './../components/Svg/Svg';
 
 const mapStateToProps = (state) => {
   return {
-    gelements: state.svg.gelements
+    gelements: state.svg.gelements,
+    selectedElement: state.svg.selectedElement
   }
 }
 
