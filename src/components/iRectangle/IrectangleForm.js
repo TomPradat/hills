@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-let CircleForm = ({handleSubmit}) => (
+let IrectangleForm = ({handleSubmit}) => (
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="label">Label :</label>
@@ -12,15 +12,15 @@ let CircleForm = ({handleSubmit}) => (
           <Field name="properties" component="input" type="text"/>
         </div>
         <div>
-          <label htmlFor="activity">Activities :</label>
+          <label htmlFor="activities">Activities :</label>
           <Field name="activities" component="input" type="text"/>
         </div>
         <button type="submit">Enregistrer</button>
       </form>
   );
 
-CircleForm = reduxForm({
-  form: 'circle',
-})(CircleForm);
+IrectangleForm = reduxForm({
+  form: 'irectangle',
+})(IrectangleForm);
 
-export default CircleForm;
+export default IrectangleForm;

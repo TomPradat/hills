@@ -3,11 +3,17 @@ import {ADD_ELEMENT, SELECT_ELEMENT, UPDATE_ELEMENT} from './../actions/actions'
 const initialState = {
   gelements: {
       circle: [
-          {id: 1, r: 50, label: 'hello', properties: '', activity: ''}
+          {id: 1, r: 50, label: 'hello', properties: '', activities: ''}
       ],
       node: [
           {id: 1, dot: 'right'}
       ],
+      rectangle: [
+          {id:1 , label: 'label', sojournTime: 'sojournTime', properties: 'properties', activities: 'activities'}
+      ],
+      irectangle: [
+          {id:1 , label: 'label', properties: 'properties', activities: 'activities'}
+      ]
   },
   selectedElement: false
 }
@@ -39,7 +45,8 @@ const updateElement = (state, action) => {
     });
 
     return Object.assign({}, state, {
-        gelements: Object.assign({}, state.gelements, temp)
+        gelements: Object.assign({}, state.gelements, temp),
+        selectedElement: false
     });
 }
 

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import CircleForm from './../Circle/CircleForm';
 import NodeForm from './../Node/NodeForm';
+import RectangleForm from './../Rectangle/RectangleForm'; 
+import IrectangleForm from './../iRectangle/IrectangleForm'; 
 
 class Form extends Component {
     handleSubmit (selectedElement, values){
@@ -17,6 +19,12 @@ class Form extends Component {
 
             case 'node' :
             return <NodeForm initialValues={selectedElement.values} onSubmit={this.handleSubmit.bind(this, selectedElement)}/>
+
+            case 'rectangle' :
+            return <RectangleForm initialValues={selectedElement.values} onSubmit={this.handleSubmit.bind(this, selectedElement)}/>
+
+            case 'irectangle' :
+            return <IrectangleForm initialValues={selectedElement.values} onSubmit={this.handleSubmit.bind(this, selectedElement)}/>
 
             default:
             return new Error('Unknow element type :' + selectedElement.type);

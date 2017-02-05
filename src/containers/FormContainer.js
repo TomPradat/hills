@@ -24,7 +24,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return{
       handleSubmit: (type, id, values) => {
-        console.log(type, id, values)
         dispatch(updateElement(type, id, values))
       }
     }

@@ -30,7 +30,7 @@ class Node extends Component {
       return position;
   }
   render() {
-    const dot = this.calculateDotPosition(this.props.dot);
+    const dot = this.calculateDotPosition(this.props.values.dot);
     const isSelected = this.props.isSelected;
 
     return (
