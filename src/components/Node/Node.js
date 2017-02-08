@@ -30,13 +30,15 @@ class Node extends Component {
       return position;
   }
   render() {
-    const dot = this.calculateDotPosition(this.props.values.dot);
+    const values = this.props.values;
+    const dot = this.calculateDotPosition(values.dot);
     const isSelected = this.props.isSelected;
 
     return (
     <Draggable 
-        defaultPosition={{x: 50, y: 40}}
+        position={{x: values.x, y: values.y}}
         onStart={this.props.selectElement}
+        onStop={this.props.updateElement}
     >
     <g className={isSelected ? "selected diamond" : "diamond"}>
         <polygon points="0 -40,50 0,0 40,-50 0"/>

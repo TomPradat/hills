@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import todoApp from './reducers';
+import gelements from './gelements';
 
 const reducer = combineReducers({
-  svg: todoApp,
+  svg: gelements,
   form: formReducer
 });
 

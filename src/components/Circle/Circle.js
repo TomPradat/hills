@@ -2,10 +2,11 @@ import React from 'react';
 import Draggable from 'react-draggable';
 import './Circle.css';
 
-const Circle = ({isSelected, values, selectElement}) => (
-  <Draggable 
-        defaultPosition={{x: 50, y: 50}}
+const Circle = ({isSelected, values, selectElement, updateElement}) => (
+  <Draggable
+        position={{x: values.x, y: values.y}}
         onStart={selectElement}
+        onStop={updateElement}
     >
       <g className={isSelected ? "selected circle" : "circle"}>
         <circle cx="0" cy="0" r={values.r}/>

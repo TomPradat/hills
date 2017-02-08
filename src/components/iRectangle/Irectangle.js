@@ -1,10 +1,11 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 
-const Irectangle = ({isSelected, values, selectElement}) => (
+const Irectangle = ({isSelected, values, selectElement, updateElement}) => (
   <Draggable 
-        defaultPosition={{x: 50, y: 50}}
+       position={{x: values.x, y: values.y}}
         onStart={selectElement}
+        onStop={updateElement}
     >
       <g className={isSelected ? "selected rectangle" : "rectangle"}>
         <rect x="0" y="0" width="200" height="100"/>

@@ -18,21 +18,21 @@ class Svg extends Component {
         return false;
     }
     render() {
-        const {gelements, selectElement} = this.props;
+        const {gelements, selectElement, updateElement} = this.props;
         return (
             <svg id="main-svg" width="600px" height="600px">
                 <BlackCircle />
                 {gelements.circle.map( (circle) =>
-                    <Circle key={circle.id} values={circle} selectElement={selectElement.bind(this, 'circle', circle.id)} isSelected={this.isSelected('circle', circle.id)}/>
+                    <Circle key={circle.id} values={circle} selectElement={selectElement.bind(this, 'circle', circle.id)} isSelected={this.isSelected('circle', circle.id)} updateElement={updateElement.bind(this, 'circle', circle.id)}/>
                 )}
                 {gelements.node.map( (node) =>
-                    <Node key={node.id} values={node} selectElement={selectElement.bind(this, 'node', node.id)} isSelected={this.isSelected('node', node.id)}/>
+                    <Node key={node.id} values={node} selectElement={selectElement.bind(this, 'node', node.id)} isSelected={this.isSelected('node', node.id)} updateElement={updateElement.bind(this, 'node', node.id)}/>
                 )}
                 {gelements.rectangle.map( (rectangle) =>
-                    <Rectangle key={rectangle.id} values={rectangle} selectElement={selectElement.bind(this, 'rectangle', rectangle.id)} isSelected={this.isSelected('rectangle', rectangle.id)}/>
+                    <Rectangle key={rectangle.id} values={rectangle} selectElement={selectElement.bind(this, 'rectangle', rectangle.id)} isSelected={this.isSelected('rectangle', rectangle.id)} updateElement={updateElement.bind(this, 'rectangle', rectangle.id)}/>
                 )}
                 {gelements.irectangle.map( (irectangle) =>
-                    <Irectangle key={irectangle.id} values={irectangle} selectElement={selectElement.bind(this, 'irectangle', irectangle.id)} isSelected={this.isSelected('irectangle', irectangle.id)}/>
+                    <Irectangle key={irectangle.id} values={irectangle} selectElement={selectElement.bind(this, 'irectangle', irectangle.id)} isSelected={this.isSelected('irectangle', irectangle.id)} updateElement={updateElement.bind(this, 'irectangle', irectangle.id)}/>
                 )}
             </svg>
         );
