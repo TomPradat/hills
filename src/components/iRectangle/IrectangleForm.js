@@ -21,6 +21,7 @@ let IrectangleForm = ({handleSubmit}) => (
 
 IrectangleForm = reduxForm({
   form: 'irectangle',
+  enableReinitialize: true
 })(IrectangleForm);
 
 export default IrectangleForm;

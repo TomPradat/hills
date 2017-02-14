@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { addElement } from './../actions/actions';
-import Factory from './../components/Factory/Factory';
+import { addElement } from './../../actions';
+import Factory from './Factory';
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onClick: (type, element) => {
-      dispatch(addElement(type, element))
+    addElement: (element) => {
+      dispatch(addElement(element))
     }
   }
 }

@@ -4,7 +4,7 @@ import './Rectangle.css';
 
 const Rectangle = ({isSelected, values, selectElement, updateElement}) => (
   <Draggable 
-        position={{x: values.x, y: values.y}}
+        position={values.position}
         onStart={selectElement}
         onStop={updateElement}
     >

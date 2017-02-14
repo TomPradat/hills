@@ -18,6 +18,7 @@ let NodeForm = ({handleSubmit}) => (
 
 NodeForm = reduxForm({
   form: 'node',
+  enableReinitialize: true
 })(NodeForm);
 
 export default NodeForm;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ElementsList from './../../containers/ElementsList';
-import FactoryContainer from './../../containers/FactoryContainer';
-import FormContainer from './../../containers/FormContainer';
+import SvgContainer from './../Svg/SvgContainer';
+import FactoryContainer from './../Factory/FactoryContainer';
+import FormContainer from './../Form/FormContainer';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
           <FormContainer />
           <FactoryContainer />
         </div>
-        <ElementsList />
+        <SvgContainer />
       </div>
     );
   }

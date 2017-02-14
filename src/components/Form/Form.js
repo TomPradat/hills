@@ -5,8 +5,9 @@ import RectangleForm from './../Rectangle/RectangleForm';
 import IrectangleForm from './../iRectangle/IrectangleForm'; 
 
 class Form extends Component {
-    handleSubmit (selectedElement, values){
-        this.props.handleSubmit(selectedElement.type, selectedElement.id, values);
+    handleSubmit (values){
+        const {updateElement, selectedElement} = this.props;
+        updateElement(Object.assign({}, selectedElement, values));
     }
     handleForm(selectedElement) {
         if (!selectedElement) {
@@ -15,25 +16,26 @@ class Form extends Component {
 
         switch(selectedElement.type) {
             case 'circle' :
-            return <CircleForm initialValues={selectedElement.values} onSubmit={this.handleSubmit.bind(this, selectedElement)}/>;
+            return <CircleForm initialValues={selectedElement} onSubmit={this.handleSubmit.bind(this)}/>;
 
             case 'node' :
-            return <NodeForm initialValues={selectedElement.values} onSubmit={this.handleSubmit.bind(this, selectedElement)}/>
+            return <NodeForm initialValues={selectedElement} onSubmit={this.handleSubmit.bind(this)}/>
 
             case 'rectangle' :
-            return <RectangleForm initialValues={selectedElement.values} onSubmit={this.handleSubmit.bind(this, selectedElement)}/>
+            return <RectangleForm initialValues={selectedElement} onSubmit={this.handleSubmit.bind(this)}/>
 
             case 'irectangle' :
-            return <IrectangleForm initialValues={selectedElement.values} onSubmit={this.handleSubmit.bind(this, selectedElement)}/>
+            return <IrectangleForm initialValues={selectedElement} onSubmit={this.handleSubmit.bind(this)}/>
 
             default:
             return new Error('Unknow element type :' + selectedElement.type);
         }
     }
     render() {
+        const {selectedElement} = this.props;
         return (
             <div id="form-container">
-                {this.handleForm(this.props.selectedElement)}
+                {this.handleForm(selectedElement)}
             </div>
         );
     }

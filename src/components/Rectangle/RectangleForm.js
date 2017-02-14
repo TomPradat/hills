@@ -25,6 +25,7 @@ let RectangleForm = ({handleSubmit}) => (
 
 RectangleForm = reduxForm({
   form: 'rectangle',
+  enableReinitialize: true
 })(RectangleForm);
 
 export default RectangleForm;

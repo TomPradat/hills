@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 
 const Irectangle = ({isSelected, values, selectElement, updateElement}) => (
   <Draggable 
-       position={{x: values.x, y: values.y}}
+        position={values.position}
         onStart={selectElement}
         onStop={updateElement}
     >

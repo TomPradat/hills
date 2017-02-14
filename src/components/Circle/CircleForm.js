@@ -21,6 +21,7 @@ let CircleForm = ({handleSubmit}) => (
 
 CircleForm = reduxForm({
   form: 'circle',
+  enableReinitialize: true
 })(CircleForm);
 
 export default CircleForm;

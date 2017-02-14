@@ -4,7 +4,7 @@ import './Circle.css';
 
 const Circle = ({isSelected, values, selectElement, updateElement}) => (
   <Draggable
-        position={{x: values.x, y: values.y}}
+        position={{x: values.position.x, y: values.position.y}}
         onStart={selectElement}
         onStop={updateElement}
     >

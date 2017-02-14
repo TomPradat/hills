@@ -36,7 +36,7 @@ class Node extends Component {
 
     return (
     <Draggable 
-        position={{x: values.x, y: values.y}}
+        position={values.position}
         onStart={this.props.selectElement}
         onStop={this.props.updateElement}
     >
