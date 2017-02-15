@@ -3,6 +3,7 @@ import CircleForm from './../Circle/CircleForm';
 import NodeForm from './../Node/NodeForm';
 import RectangleForm from './../Rectangle/RectangleForm'; 
 import IrectangleForm from './../iRectangle/IrectangleForm'; 
+import TextForm from './../Text/TextForm';
 
 class Form extends Component {
     handleSubmit (values){
@@ -26,6 +27,9 @@ class Form extends Component {
 
             case 'irectangle' :
             return <IrectangleForm initialValues={selectedElement} onSubmit={this.handleSubmit.bind(this)}/>
+
+            case 'text' :
+            return <TextForm initialValues={selectedElement} onSubmit={this.handleSubmit.bind(this)}/>
 
             default:
             return new Error('Unknow element type :' + selectedElement.type);

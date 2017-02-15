@@ -43,7 +43,8 @@ const listByType = combineReducers({
     circle: list('circle'),
     rectangle: list('rectangle'),
     node: list('node'),
-    irectangle: list('irectangle')
+    irectangle: list('irectangle'),
+    text: list('text')
 });
 
 const element = combineReducers({

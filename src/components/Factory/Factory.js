@@ -8,6 +8,7 @@ const Factory = ({addElement}) => (
         <button onClick={() => addElement(createElement('node'))}>Add node</button>
         <button onClick={() => addElement(createElement('rectangle'))}>Add Rectangle</button>
         <button onClick={() => addElement(createElement('irectangle'))}>Add iRectangle</button>
+        <button onClick={() => addElement(createElement('text'))}>Add Text</button>
     </div>
 );
 

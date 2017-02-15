@@ -5,6 +5,7 @@ import Circle from './../Circle/Circle';
 import Node from './../Node/Node';
 import Rectangle from './../Rectangle/Rectangle';
 import Irectangle from './../iRectangle/Irectangle';
+import Text from './../Text/Text';
 
 
 class Svg extends Component {
@@ -18,6 +19,9 @@ class Svg extends Component {
         return (
             <svg id="main-svg" width="600px" height="600px">
                 <BlackCircle />
+                {elements.texts.map((text) => 
+                    <Text key={text.id} values={text} selectElement={selectElement.bind(this, text.id)} isSelected={this.isSelected(text.id)} updateElement={updateElement.bind(this, text)}/> 
+                )}
                 {elements.circles.map( (circle) =>
                     <Circle key={circle.id} values={circle} selectElement={selectElement.bind(this, circle.id)} isSelected={this.isSelected(circle.id)} updateElement={updateElement.bind(this, circle)}/>
                 )}

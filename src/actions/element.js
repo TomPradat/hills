@@ -44,6 +44,15 @@ const irectangle = {
     }
 }
 
+const text = {
+    type: 'text',
+    text: 'Type text here',
+    position: {
+        x: 0,
+        y: 0
+    }
+}
+
 export const createElement = (type, params) => {
     switch(type) {
         case 'circle':
@@ -54,6 +63,9 @@ export const createElement = (type, params) => {
             return Object.assign({id: v4()}, node, params);
         case 'irectangle':
             return Object.assign({id: v4()}, irectangle, params);
+        case 'text':
+            return Object.assign({id: v4()}, text, params);
+
 
         default :
         throw new Error('Impossible to create an element of type ' + type);

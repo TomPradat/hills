@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
       nodes: getElementListByType(state.element, 'node'),
       rectangles: getElementListByType(state.element, 'rectangle'),
       irectangles: getElementListByType(state.element, 'irectangle'),
+      texts: getElementListByType(state.element, 'text')
     },
     selectedId: state.element.selectedId
   }
